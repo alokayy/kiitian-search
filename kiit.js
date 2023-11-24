@@ -71,9 +71,11 @@ if (argv[2]) {
         console.log("[\x1b[1;33m~\x1b[0m] Digging details.")
         getDetails(data).then(data => {
             console.log("\n[\x1b[1;32m*\x1b[0m] \x1b[1;34mName\x1b[0m: ", data.name);
+            console.log("[\x1b[1;32m*\x1b[0m] \x1b[1;34mPhone\x1b[0m:", data.phone == "0000000000" ? "[REDACTED]" : data.phone);
             console.log("[\x1b[1;32m*\x1b[0m] \x1b[1;34mE-Mail\x1b[0m: ", data.email);
             console.log("[\x1b[1;32m*\x1b[0m] \x1b[1;34mRoll No\x1b[0m: ", data.roll_no);
             console.log("[\x1b[1;32m*\x1b[0m] \x1b[1;34mStudent ID\x1b[0m: ", data.student_id);
+            console.log("[\x1b[1;32m*\x1b[0m] \x1b[1;34mInternational\x1b[0m:", data.phone == "0000000000" ? "True" : "False");
         }).catch(err => console.log(err));
     }).catch(err => console.log(err));;
 } else {
